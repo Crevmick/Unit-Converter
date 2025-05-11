@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './Config/db.js';
 import timeRoutes from './Routes/TimeRoute.js';
+import lengthRoute from "./Routes/lengthRoute.js"; // Added
 
 dotenv.config();
 
@@ -18,7 +19,7 @@ app.use(cors())
 
 //Mounting the route
 app.use('/api/time', timeRoutes);
-
+app.use('/api/length', lengthRoute); // Added
 
 
 //Listen to our server
