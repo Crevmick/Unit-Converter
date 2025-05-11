@@ -18,6 +18,7 @@ export const covertFromFahrenheit = async (req, res) => {
             case `kelvin`:
             result = (fahrenheit - 32) * (5/9) + 273.15;
             break;
+            default:
             return res.status(400).json({error:"Invalid Input"})
         }
 
@@ -59,9 +60,10 @@ export const covertFromKelvin = async (req, res) => {
             result = (kelvin - 273.15);
             break;
             case `fahrenheit`:
-            result = (kelvin - 273.15 *(9/5) + 32);
+            result = (kelvin - 273.15) *(9/5) + 32;
             break;
-            return res.status(400).json({error:"Invalid Input"})
+            default:
+            return res.status(400).json({error:"Invalid Input"});
         }
 
     const conversion = new temperatureModel({

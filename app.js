@@ -21,7 +21,7 @@ app.use(cors())
 //Mounting the route
 app.use('/api/time', timeRoutes);
 app.use('/api/length', lengthRoute); // Added
-app.use('api/temperature', temperatureRoute);
+app.use('/api/temperature', temperatureRoute);
 
 //Listen to our server
 const PORT = process.env.PORT ||3000;
