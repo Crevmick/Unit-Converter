@@ -5,6 +5,6 @@ import { convertLength } from "../Controllers/lengthController.js";
 const router = express.Router();
 
 // Define the length conversion route
-router.post('/from-meter', convertLength);
+router.post('/from-mm', convertLength);
 
 export default router;
