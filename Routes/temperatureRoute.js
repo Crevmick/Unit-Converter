@@ -1,11 +1,11 @@
 import express from 'express';
 
-import {covertFromFahrenheit, covertFromKelvin, covertFromCelsius} from '../Controllers/temperatureController.js';
+import {convertFromFahrenheit, convertFromKelvin, convertFromCelsius} from '../Controllers/temperatureController.js';
 
 const router = express.Router();
 
-router.post('/from-fahrenheit', covertFromFahrenheit);
-router.post('/from-kelvin', covertFromKelvin);
-router.post('/from-Celsius', covertFromCelsius);
+router.post('/from-fahrenheit', convertFromFahrenheit);
+router.post('/from-kelvin', convertFromKelvin);
+router.post('/from-Celsius', convertFromCelsius);
 
 export default router;

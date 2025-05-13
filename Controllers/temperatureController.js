@@ -1,6 +1,6 @@
 import temperatureModel from '../Model/temperatureModel.js';
 
-export const covertFromFahrenheit = async (req, res) => {
+export const convertFromFahrenheit = async (req, res) => {
     const {to, value} = req.body;
 
      if (!to || !value) {
@@ -44,7 +44,7 @@ export const covertFromFahrenheit = async (req, res) => {
         
     
 
-export const covertFromKelvin = async (req, res) => {
+export const convertFromKelvin = async (req, res) => {
     const {to, value} = req.body;
 
      if (!to || !value) {
@@ -86,7 +86,7 @@ export const covertFromKelvin = async (req, res) => {
 
 }
 
-export const covertFromCelsius = async (req, res) => {
+export const convertFromCelsius = async (req, res) => {
     const {to, value} = req.body;
 
      if (!to || !value) {
