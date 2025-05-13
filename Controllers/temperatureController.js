@@ -60,7 +60,7 @@ export const convertFromKelvin = async (req, res) => {
             result = (kelvin - 273.15);
             break;
             case `fahrenheit`:
-            result = (kelvin - 273.15 *(9/5) + 32);
+            result = (kelvin - 273.15) *(9/5) + 32;
             break;
             default:
             return res.status(400).json({error:"Invalid Unit"});
