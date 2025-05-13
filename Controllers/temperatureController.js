@@ -1,6 +1,6 @@
 import temperatureModel from '../Model/temperatureModel.js';
 
-export const covertFromFahrenheit = async (req, res) => {
+export const convertFromFahrenheit = async (req, res) => {
     const {to, value} = req.body;
 
      if (!to || !value) {
@@ -19,7 +19,7 @@ export const covertFromFahrenheit = async (req, res) => {
             result = (fahrenheit - 32) * (5/9) + 273.15;
             break;
             default:
-            return res.status(400).json({error:"Invalid Input"})
+            return res.status(400).json({error:"Invalid Unit"});
         }
 
     const conversion = new temperatureModel({
@@ -44,7 +44,7 @@ export const covertFromFahrenheit = async (req, res) => {
         
     
 
-export const covertFromKelvin = async (req, res) => {
+export const convertFromKelvin = async (req, res) => {
     const {to, value} = req.body;
 
      if (!to || !value) {
@@ -63,7 +63,7 @@ export const covertFromKelvin = async (req, res) => {
             result = (kelvin - 273.15) *(9/5) + 32;
             break;
             default:
-            return res.status(400).json({error:"Invalid Input"});
+            return res.status(400).json({error:"Invalid Unit"});
         }
 
     const conversion = new temperatureModel({
@@ -82,6 +82,47 @@ export const covertFromKelvin = async (req, res) => {
         result
     });
 
+
+
+}
+
+export const convertFromCelsius = async (req, res) => {
+    const {to, value} = req.body;
+
+     if (!to || !value) {
+        return res.status(400).json({error:"Invalid Input"})
+     }
+
+     const celsius = parseFloat(value);
+     let result;
+
+     // Converting from Celsius to Other Temperature Units
+        switch(to){
+            case `fahrenheit`: 
+            result = (celsius * 9/5) + 32;
+            break;
+            case `kelvin`:
+            result = (celsius + 273.15);
+            break;
+            default:
+            return res.status(400).json({error:"Invalid Unit"});
+        }
+
+    const conversion = new temperatureModel({
+        from: "celsius",
+        to,
+        input: celsius,
+        result
+
+    });
+
+    await conversion.save();
+    res.json({
+        from: "celsius",
+        to,
+        input: celsius,
+        result
+    });
 
 
 }
