@@ -71,6 +71,7 @@ export const convertFromHours = async (req, res) => {
   res.json({ from: 'hours', to, input: hours, result });
 };
 
+
 //Converting from Minutes to other units
 export const convertFromMinutes = async (req, res) => {
   const { to, value } = req.body;
