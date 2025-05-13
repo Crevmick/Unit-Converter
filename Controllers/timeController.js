@@ -31,6 +31,8 @@ export const convertFromSeconds = async (req, res) => {
 
   res.json({ from: 'seconds', to, input: seconds, result });
 };
+
+
 // Coverting from Hours to other units
 export const convertFromHours = async (req, res) => {
   const { to, value } = req.body;
