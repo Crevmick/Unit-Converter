@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './Config/db.js';
 import timeRoutes from './Routes/TimeRoute.js';
-import lengthRoute from "./Routes/lengthRoute.js"; // Added
+import lengthRoute from "./Routes/lengthRoute.js"; 
 import temperatureRoute from './Routes/temperatureRoute.js';
 
 dotenv.config();
@@ -14,14 +14,18 @@ const app = express();
 //connect DB 
 connectDB();
 
+
+//middleware
 app.use(express.json()); // for parsing JSON body
 app.use(cors())
 
 
 //Mounting the route
 app.use('/api/time', timeRoutes);
-app.use('/api/length', lengthRoute); // Added
+app.use('/api/length', lengthRoute); 
 app.use('/api/temperature', temperatureRoute);
+
+
 
 //Listen to our server
 const PORT = process.env.PORT ||3000;
