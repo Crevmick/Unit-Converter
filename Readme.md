@@ -34,6 +34,10 @@ A versatile and lightweight Unit Converter API built using JavaScript. This API 
 
 * **POST** `/api/length/from-mm`: Convert from millimeters.
 * **POST** `/api/length/from-centimeter`: Convert from centimeters.
+* **POST** `/api/length/from-decimeter`: Convert from decimeters.
+* **POST** `/api/length/from-meter`: Convert from meter.
+* **POST** `/api/length/from-foot`: Convert from foot.
+* **POST** `/api/length/from-inch`: Convert from inch.
 
 ### Temperature Conversion
 
