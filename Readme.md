@@ -80,7 +80,7 @@ You can use **Postman** or any other API testing tool to test the API routes.
 
 ## Documentation
 
-For detailed request/response formats and usage examples, [click here](#) to view the full API documentation.
+For detailed request/response formats and usage examples, [click here](https://documenter.getpostman.com/view/44798869/2sB2qWF3fF) to view the full API documentation.
 
 ## Contributions
 
